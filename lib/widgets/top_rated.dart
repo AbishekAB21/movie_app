@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:movie_app/utils/apptheme.dart';
 import 'package:movie_app/utils/text.dart';
 
-class TrendingMovies extends StatelessWidget {
-  final List trending;
-  const TrendingMovies({super.key, required this.trending});
+class TopRatedMovies extends StatelessWidget {
+  final List toprated;
+  const TopRatedMovies({super.key, required this.toprated});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class TrendingMovies extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           modifiedTexts(
-            text: "Trending Movies",
+            text: "Top Rated Movies",
             size: 22,
             color: apptheme.primaryColor,
           ),
@@ -25,7 +25,7 @@ class TrendingMovies extends StatelessWidget {
             height: 270,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
-              itemCount: trending.length,
+              itemCount: toprated.length,
               itemBuilder: (context, index) {
                 return InkWell(
                   onTap: () {},
@@ -40,15 +40,15 @@ class TrendingMovies extends StatelessWidget {
                               image: DecorationImage(
                                   image: NetworkImage(
                                       'https://image.tmdb.org/t/p/w500' +
-                                          trending[index]['poster_path']))),
+                                          toprated[index]['poster_path']))),
                         ),
                         SizedBox(
                           height: 5,
                         ),
                         Container(
                           child: modifiedTexts(
-                              text: trending[index]['title'] != null
-                                  ? trending[index]['title']
+                              text: toprated[index]['title'] != null
+                                  ? toprated[index]['title']
                                   : 'Loading',
                               color: apptheme.primaryColor,
                               size: 15),

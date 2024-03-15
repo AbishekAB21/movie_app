@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:movie_app/utils/apptheme.dart';
 import 'package:movie_app/utils/text.dart';
 
-class TrendingMovies extends StatelessWidget {
-  final List trending;
-  const TrendingMovies({super.key, required this.trending});
+class TV extends StatelessWidget {
+  final List populartv;
+  const TV({super.key, required this.populartv});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class TrendingMovies extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           modifiedTexts(
-            text: "Trending Movies",
+            text: "Popular TV Shows",
             size: 22,
             color: apptheme.primaryColor,
           ),
@@ -22,33 +22,36 @@ class TrendingMovies extends StatelessWidget {
             height: 10,
           ),
           Container(
-            height: 270,
+            height: 190,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
-              itemCount: trending.length,
+              itemCount: populartv.length,
               itemBuilder: (context, index) {
                 return InkWell(
                   onTap: () {},
                   child: Container(
-                    width: 140,
+                    padding: EdgeInsets.all(5),
+                    width: 250,
                     child: Column(
                       children: [
                         Container(
-                          height: 200,
+                          width: 250,
+                          height: 140,
                           decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(8),
+                              borderRadius: BorderRadius.circular(10),
                               image: DecorationImage(
                                   image: NetworkImage(
                                       'https://image.tmdb.org/t/p/w500' +
-                                          trending[index]['poster_path']))),
+                                          populartv[index]['backdrop_path']),
+                                  fit: BoxFit.cover)),
                         ),
                         SizedBox(
                           height: 5,
                         ),
                         Container(
                           child: modifiedTexts(
-                              text: trending[index]['title'] != null
-                                  ? trending[index]['title']
+                              text: populartv[index]['original_name'] != null
+                                  ? populartv[index]['original_name']
                                   : 'Loading',
                               color: apptheme.primaryColor,
                               size: 15),

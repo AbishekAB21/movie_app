@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/utils/apptheme.dart';
 import 'package:movie_app/utils/text.dart';
+import 'package:movie_app/widgets/popular_tv.dart';
+import 'package:movie_app/widgets/top_rated.dart';
 import 'package:movie_app/widgets/trending.dart';
 import 'package:tmdb_api/tmdb_api.dart';
 
@@ -46,7 +48,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.transparent,
+        backgroundColor: apptheme.secondaryColor,
         appBar: AppBar(
           title: Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -67,6 +69,8 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         body: ListView(
           children: [
+            TV(populartv: tvTopRated),
+            TopRatedMovies(toprated: topRatedMovies),
             TrendingMovies(trending: trendingmovies),
           ],
         ),
