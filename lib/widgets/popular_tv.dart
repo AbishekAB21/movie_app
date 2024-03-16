@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movie_app/screens/description.dart';
 import 'package:movie_app/utils/apptheme.dart';
 import 'package:movie_app/utils/text.dart';
 
@@ -28,7 +29,19 @@ class TV extends StatelessWidget {
               itemCount: populartv.length,
               itemBuilder: (context, index) {
                 return InkWell(
-                  onTap: () {},
+                  onTap: () {
+                     Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => Description(
+                          name: populartv[index]['original_name'],
+                          description: populartv[index]['overview'],
+                          launch_date: populartv[index]['first_air_date'],
+                          bannerURL: 'https://image.tmdb.org/t/p/w500' +
+                              populartv[index]['backdrop_path'],
+                          posterURL: 'https://image.tmdb.org/t/p/w500' +
+                              populartv[index]['poster_path'],
+                          vote: populartv[index]['popularity'].toString()),
+                    ));
+                  },
                   child: Container(
                     padding: EdgeInsets.all(5),
                     width: 250,

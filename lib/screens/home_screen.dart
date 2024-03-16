@@ -35,7 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
       topRatedMovies = topRatedMoviesResult['results'];
       tvTopRated = tvTopRatedResults['results'];
     });
-    print(trendingmovies);
+    print(tvTopRatedResults);
   }
 
   @override
@@ -50,22 +50,32 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Scaffold(
         backgroundColor: apptheme.secondaryColor,
         appBar: AppBar(
+          backgroundColor: apptheme.secondaryColor,
           title: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Icon(Icons.movie),
+              Icon(
+                Icons.movie,
+                color: apptheme.primaryColor,
+              ),
               SizedBox(
                 width: 10,
               ),
               modifiedTexts(
                 text: "Filmeum",
                 color: apptheme.primaryColor,
-                size: 20,
+                size: 26,
               ),
             ],
           ),
-          centerTitle: true,
-          backgroundColor: apptheme.terinaryColor,
+          actions: [
+            IconButton(
+                onPressed: () {},
+                icon: Icon(
+                  Icons.search,
+                  color: apptheme.primaryColor,
+                ))
+          ],
         ),
         body: ListView(
           children: [

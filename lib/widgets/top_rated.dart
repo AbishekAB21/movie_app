@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movie_app/screens/description.dart';
 import 'package:movie_app/utils/apptheme.dart';
 import 'package:movie_app/utils/text.dart';
 
@@ -28,7 +29,19 @@ class TopRatedMovies extends StatelessWidget {
               itemCount: toprated.length,
               itemBuilder: (context, index) {
                 return InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => Description(
+                          name: toprated[index]['title'],
+                          description: toprated[index]['overview'],
+                          launch_date: toprated[index]['release_date'],
+                          bannerURL: 'https://image.tmdb.org/t/p/w500' +
+                              toprated[index]['backdrop_path'],
+                          posterURL: 'https://image.tmdb.org/t/p/w500' +
+                              toprated[index]['poster_path'],
+                          vote: toprated[index]['vote_average'].toString()),
+                    ));
+                  },
                   child: Container(
                     width: 140,
                     child: Column(
