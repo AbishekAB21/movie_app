@@ -39,7 +39,9 @@ class TrendingMovies extends StatelessWidget {
                               trending[index]['backdrop_path'],
                           posterURL: 'https://image.tmdb.org/t/p/w500' +
                               trending[index]['poster_path'],
-                          vote: trending[index]['vote_average'].toString()),
+                          vote: trending[index]['vote_average'].toString(),
+                          ageRestricted: trending[index]['adult']
+                          ),
                     ));
                   },
                   child: Container(

@@ -2,27 +2,40 @@ import 'package:flutter/material.dart';
 import 'package:movie_app/utils/apptheme.dart';
 import 'package:movie_app/utils/text.dart';
 
+// ignore: must_be_immutable
 class Description extends StatelessWidget {
   final String name, description, launch_date, bannerURL, posterURL, vote;
+  bool ageRestricted;
 
-  const Description(
+  Description(
       {super.key,
       required this.name,
       required this.description,
       required this.launch_date,
       required this.bannerURL,
       required this.posterURL,
-      required this.vote});
+      required this.vote,
+      required this.ageRestricted});
 
   @override
   Widget build(BuildContext context) {
+    String restricted;
+    if (ageRestricted) {
+      restricted = "Yes";
+    } else {
+      restricted = "No";
+    }
+
     return SafeArea(
       child: Scaffold(
         backgroundColor: apptheme.secondaryColor,
         appBar: AppBar(
           iconTheme: IconThemeData(color: apptheme.primaryColor),
           backgroundColor: apptheme.secondaryColor,
-          title: Text(name, style: apptheme.AppBarTitle,),
+          title: Text(
+            name,
+            style: apptheme.AppBarTitle,
+          ),
           centerTitle: true,
         ),
         body: Container(
@@ -75,9 +88,22 @@ class Description extends StatelessWidget {
                     margin: EdgeInsets.all(10),
                     child: Image.network(posterURL),
                   ),
-                  Flexible(child: Container(child: modifiedTexts(text: description, color: apptheme.primaryColor, size: 14),))
+                  Flexible(
+                      child: Container(
+                    child: modifiedTexts(
+                        text: description,
+                        color: apptheme.primaryColor,
+                        size: 14),
+                  ))
                 ],
-              )
+              ),
+              Container(
+                  padding: EdgeInsets.all(10),
+                  child: modifiedTexts(
+                    text: "Age Restricted : " + restricted,
+                    color: apptheme.primaryColor,
+                    size: 16,
+                  ))
             ],
           ),
         ),

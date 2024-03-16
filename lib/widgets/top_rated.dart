@@ -39,7 +39,9 @@ class TopRatedMovies extends StatelessWidget {
                               toprated[index]['backdrop_path'],
                           posterURL: 'https://image.tmdb.org/t/p/w500' +
                               toprated[index]['poster_path'],
-                          vote: toprated[index]['vote_average'].toString()),
+                          vote: toprated[index]['vote_average'].toString(),
+                          ageRestricted: toprated[index]['adult']
+                          ),
                     ));
                   },
                   child: Container(

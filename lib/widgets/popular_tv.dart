@@ -39,7 +39,9 @@ class TV extends StatelessWidget {
                               populartv[index]['backdrop_path'],
                           posterURL: 'https://image.tmdb.org/t/p/w500' +
                               populartv[index]['poster_path'],
-                          vote: populartv[index]['popularity'].toString()),
+                          vote: populartv[index]['popularity'].toString(),
+                          ageRestricted: populartv[index]['adult']
+                          ),
                     ));
                   },
                   child: Container(
