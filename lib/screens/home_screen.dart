@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/utils/apptheme.dart';
+import 'package:movie_app/widgets/carousel.dart';
 import 'package:movie_app/widgets/popular_tv.dart';
 import 'package:movie_app/widgets/top_rated.dart';
 import 'package:movie_app/widgets/trending.dart';
@@ -32,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
     setState(() {
       trendingmovies = trendingResult['results'];
       topRatedMovies = topRatedMoviesResult['results'];
-      tvTopRated = tvTopRatedResults['results'];
+      tvTopRated = tvTopRatedResults['results']; 
     });
     print(tvTopRatedResults);
   }
@@ -80,39 +81,14 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         body: ListView(
           children: [
+            MovieCarousel(images: trendingmovies),
             TV(populartv: tvTopRated),
             TopRatedMovies(toprated: topRatedMovies),
             TrendingMovies(trending: trendingmovies),
           ],
         ),
-        // bottomNavigationBar:
-        //     BottomNavigationBar(backgroundColor: Colors.black, items: [
-        //   BottomNavigationBarItem(
-        //       icon: Icon(
-        //         Icons.home_filled,
-        //         color: apptheme.bottomNavBarIconsColor,
-        //       ),
-        //       label: "Home"),
-        //   BottomNavigationBarItem(
-        //       icon: Icon(
-        //         Icons.shopping_bag_outlined,
-        //         color: apptheme.bottomNavBarIconsColor,
-        //       ),
-        //       label: "Store"),
-        //   BottomNavigationBarItem(
-        //       icon: Icon(
-        //         Icons.live_tv_outlined,
-        //         color: apptheme.bottomNavBarIconsColor,
-        //       ),
-        //       label: "Live TV"),
-        //   BottomNavigationBarItem(
-        //       icon: Icon(
-        //         Icons.download_sharp,
-        //         color: apptheme.bottomNavBarIconsColor,
-        //       ),
-        //       label: "Downloads"),
-        // ]),
       ),
     );
   }
 }
+ 
