@@ -14,10 +14,16 @@ class TV extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          modifiedTexts(
-            text: "Popular TV Shows",
-            size: 22,
-            color: apptheme.primaryColor,
+          Row(
+            children: [
+              modifiedTexts(text: "Prime", color: Colors.blue.shade700, size: 24),
+              SizedBox(width: 10,),
+              modifiedTexts(
+                text: "- Popular TV Shows",
+                size: 22,
+                color: apptheme.primaryColor,
+              ),
+            ],
           ),
           SizedBox(
             height: 10,

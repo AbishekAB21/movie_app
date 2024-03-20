@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/utils/apptheme.dart';
-import 'package:movie_app/utils/text.dart';
 import 'package:movie_app/widgets/popular_tv.dart';
 import 'package:movie_app/widgets/top_rated.dart';
 import 'package:movie_app/widgets/trending.dart';
@@ -54,17 +53,12 @@ class _HomeScreenState extends State<HomeScreen> {
           title: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Icon(
-                Icons.movie,
-                color: apptheme.primaryColor,
+              Image.asset(
+                "assets/Prime_logo.png",
+                width: 46,
               ),
               SizedBox(
                 width: 10,
-              ),
-              modifiedTexts(
-                text: "Filmeum",
-                color: apptheme.primaryColor,
-                size: 26,
               ),
             ],
           ),
@@ -72,8 +66,15 @@ class _HomeScreenState extends State<HomeScreen> {
             IconButton(
                 onPressed: () {},
                 icon: Icon(
-                  Icons.search,
-                  color: apptheme.primaryColor,
+                  Icons.cast,
+                  color: apptheme.iconColor1,
+                )),
+            IconButton(
+                onPressed: () {},
+                icon: Image.asset(
+                  "assets/profile.png",
+                  color: Colors.blue.shade600,
+                  width: 30,
                 ))
           ],
         ),
@@ -84,6 +85,33 @@ class _HomeScreenState extends State<HomeScreen> {
             TrendingMovies(trending: trendingmovies),
           ],
         ),
+        // bottomNavigationBar:
+        //     BottomNavigationBar(backgroundColor: Colors.black, items: [
+        //   BottomNavigationBarItem(
+        //       icon: Icon(
+        //         Icons.home_filled,
+        //         color: apptheme.bottomNavBarIconsColor,
+        //       ),
+        //       label: "Home"),
+        //   BottomNavigationBarItem(
+        //       icon: Icon(
+        //         Icons.shopping_bag_outlined,
+        //         color: apptheme.bottomNavBarIconsColor,
+        //       ),
+        //       label: "Store"),
+        //   BottomNavigationBarItem(
+        //       icon: Icon(
+        //         Icons.live_tv_outlined,
+        //         color: apptheme.bottomNavBarIconsColor,
+        //       ),
+        //       label: "Live TV"),
+        //   BottomNavigationBarItem(
+        //       icon: Icon(
+        //         Icons.download_sharp,
+        //         color: apptheme.bottomNavBarIconsColor,
+        //       ),
+        //       label: "Downloads"),
+        // ]),
       ),
     );
   }

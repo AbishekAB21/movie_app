@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:movie_app/screens/description.dart';
 import 'package:movie_app/utils/apptheme.dart';
@@ -14,10 +15,16 @@ class TopRatedMovies extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          modifiedTexts(
-            text: "Top Rated Movies",
-            size: 22,
-            color: apptheme.primaryColor,
+          Row(
+            children: [
+              modifiedTexts(text: "Prime", color: Colors.blue.shade700, size: 24),
+              SizedBox(width: 10,),
+              modifiedTexts(
+                text: "- Top Rated Movies",
+                size: 22,
+                color: apptheme.primaryColor,
+              ),
+            ],
           ),
           SizedBox(
             height: 10,
