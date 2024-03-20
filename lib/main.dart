@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/navigation/tabbar.dart';
 import 'package:movie_app/screens/splash.dart';
 import 'package:movie_app/utils/apptheme.dart';
 
