@@ -8,8 +8,12 @@ abstract class AppTheme {
   final Color iconColor1;
   final Color bottomNavBarIconsColor;
   final Color terinaryColor;
+  final Color searchBarColor;
   final TextStyle AppBarTitle;
   final TextStyle bottomNavBarLabel;
+  final TextStyle hintTextStyle;
+  final TextStyle searchTextStyle;
+
 
   AppTheme({
     required this.primaryColor, 
@@ -17,8 +21,11 @@ abstract class AppTheme {
     required this.iconColor1,
     required this.bottomNavBarIconsColor,
     required this.terinaryColor,
+    required this.searchBarColor,
     required this.AppBarTitle,
     required this.bottomNavBarLabel,
+    required this.hintTextStyle,
+    required this.searchTextStyle
   
   });
 }
@@ -31,8 +38,10 @@ class AppDefaultTheme extends AppTheme {
         iconColor1: Colors.grey.shade600,
         bottomNavBarIconsColor: Colors.white,
         terinaryColor: Colors.grey.shade800,
+        searchBarColor: Colors.grey.shade900,
         AppBarTitle: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
-        bottomNavBarLabel: TextStyle(fontWeight: FontWeight.bold, color: Colors.white)
-        
+        bottomNavBarLabel: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+        hintTextStyle: TextStyle(color: Colors.white.withOpacity(0.2)),
+        searchTextStyle: TextStyle(color: Colors.white, fontSize: 16)
       );
 }

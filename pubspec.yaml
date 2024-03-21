@@ -32,7 +32,9 @@ dependencies:
   cupertino_icons: ^1.0.6
   flutter:
     sdk: flutter
+  fluttertoast: ^8.2.4
   google_fonts: ^6.2.1
+  http: ^1.2.1
   tmdb_api: ^2.2.0
 
 dev_dependencies:

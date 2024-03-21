@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movie_app/functions/searchBar.dart';
 import 'package:movie_app/utils/apptheme.dart';
 import 'package:movie_app/widgets/carousel.dart';
 import 'package:movie_app/widgets/popular_tv.dart';
@@ -81,6 +82,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         body: ListView(
           children: [
+            SearchBarFunc(),
             MovieCarousel(images: trendingmovies),
             TV(populartv: tvTopRated),
             TopRatedMovies(toprated: topRatedMovies),

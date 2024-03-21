@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/navigation/tabbar.dart';
-import 'package:movie_app/screens/home_screen.dart';
 import 'package:movie_app/utils/apptheme.dart';
 import 'package:movie_app/utils/text.dart';
 
@@ -21,28 +20,39 @@ class DownloadScreen extends StatelessWidget {
                 "No videos downloaded",
                 style: apptheme.bottomNavBarLabel,
               ),
-              SizedBox(height: 16,),
+              SizedBox(
+                height: 16,
+              ),
               ElevatedButton(
                   style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(apptheme.iconColor1),
+                      backgroundColor:
+                          MaterialStateProperty.all(apptheme.iconColor1),
                       shape: MaterialStateProperty.all(RoundedRectangleBorder(
                           borderRadius: BorderRadius.all(Radius.circular(5))))),
                   onPressed: () {
-                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => TabBarScreen()));
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => TabBarScreen()));
                   },
                   child: modifiedTexts(
                       text: "Find videos to download",
                       color: apptheme.primaryColor,
                       size: 18)),
-                   SizedBox(height: 16,),
-                   Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      modifiedTexts(text: "Auto Downloads: On • ", color: apptheme.primaryColor, size: 16),
-                      modifiedTexts(text: "Manage", color: Colors.blue.shade600, size: 16)
-                      
-                    ],
-                   )
+              SizedBox(
+                height: 16,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  modifiedTexts(
+                      text: "Auto Downloads: On • ",
+                      color: apptheme.primaryColor,
+                      size: 16),
+                  modifiedTexts(
+                      text: "Manage", color: Colors.blue.shade600, size: 16)
+                ],
+              )
             ],
           )),
         ],
