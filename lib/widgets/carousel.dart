@@ -16,21 +16,6 @@ class MovieCarousel extends StatelessWidget {
             return Builder(
               builder: (context) {
                 return InkWell(
-                  onTap: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => Description(
-                          name: images[e]['original_name'],
-                          description: images[e]['overview'],
-                          launch_date: images[e]['first_air_date'],
-                          bannerURL: 'https://image.tmdb.org/t/p/w500' +
-                              images[e]['backdrop_path'],
-                          posterURL: 'https://image.tmdb.org/t/p/w500' +
-                              images[e]['poster_path'],
-                          vote: images[e]['popularity'].toString(),
-                          ageRestricted: images[e]['adult']
-                          ),
-                    ));
-                  },
                   child: Stack(
                     children: [
                       Positioned(

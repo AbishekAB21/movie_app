@@ -26,17 +26,22 @@ class _SearchBarState extends State<SearchBarFunc> {
       var searchjson = tempdata['results'];
       for (var i = 0; i < searchjson.length; i++) {
         //only add value if all are present
-        if (searchjson[i]['id'] != null &&
+        if (searchjson[i]['title'] != null &&
             searchjson[i]['poster_path'] != null &&
+            searchjson[i]['backdrop_path']!= null &&
             searchjson[i]['vote_average'] != null &&
-            searchjson[i]['media_type'] != null) {
+            searchjson[i]['adult'] != null &&
+            searchjson[i]['overview'] != null&&
+            searchjson[i]['release_date'] != null
+            ) {
           searchresult.add({
-            'id': searchjson[i]['id'],
+            'title': searchjson[i]['title'],
             'poster_path': searchjson[i]['poster_path'],
+            'backdrop_path' : searchjson[i]['backdrop_path'],
             'vote_average': searchjson[i]['vote_average'],
-            'media_type': searchjson[i]['media_type'],
-            'popularity': searchjson[i]['popularity'],
+            'adult': searchjson[i]['adult'],
             'overview': searchjson[i]['overview'],
+            'release_date' : searchjson[i]['release_date'],
           });
 
           // searchresult = searchresult.toSet().toList();
@@ -144,26 +149,25 @@ class _SearchBarState extends State<SearchBarFunc> {
                               return GestureDetector(
                                 onTap: () {
                                   Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (context) => Description(
-                                        name: searchresult[index]['title'],
-                                        description: searchresult[index]
-                                            ['overview'],
-                                        launch_date: searchresult[index]
-                                            ['release_date'],
-                                        bannerURL:
-                                            'https://image.tmdb.org/t/p/w500' +
-                                                searchresult[index]
-                                                    ['backdrop_path'],
-                                        posterURL:
-                                            'https://image.tmdb.org/t/p/w500' +
-                                                searchresult[index]
-                                                    ['poster_path'],
-                                        vote: searchresult[index]
-                                                ['vote_average']
-                                            .toString(),
-                                        ageRestricted: searchresult[index]
-                                            ['adult']),
-                                  ));
+                                      builder: (context) => Description(
+                                          name: searchresult[index]['title'],
+                                          description: searchresult[index]
+                                              ['overview'],
+                                          launch_date: searchresult[index]
+                                              ['release_date'],
+                                          bannerURL:
+                                              'https://image.tmdb.org/t/p/w500' +
+                                                  searchresult[index]
+                                                      ['backdrop_path'],
+                                          posterURL:
+                                              'https://image.tmdb.org/t/p/w500' +
+                                                  searchresult[index]
+                                                      ['poster_path'],
+                                          vote: searchresult[index]
+                                                  ['vote_average']
+                                              .toString(),
+                                          ageRestricted: searchresult[index]
+                                              ['adult'])));
                                 },
                                 child: Container(
                                   margin: EdgeInsets.only(top: 4, bottom: 4),
@@ -186,7 +190,9 @@ class _SearchBarState extends State<SearchBarFunc> {
                                                     'https://image.tmdb.org/t/p/w500${searchresult[index]['poster_path']}'),
                                                 fit: BoxFit.fill)),
                                       ),
-                                      SizedBox(width: 5,)
+                                      SizedBox(
+                                        width: 5,
+                                      )
                                     ],
                                   ),
                                 ),
