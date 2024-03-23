@@ -15,7 +15,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  List trendingmovies = [];
+  List trendingmovies = []; 
   List topRatedMovies = [];
   List tvTopRated = [];
   final String apiKey = '408c290ecdcf9f22cd27fe9c1edfd1af';
@@ -36,7 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
       topRatedMovies = topRatedMoviesResult['results'];
       tvTopRated = tvTopRatedResults['results']; 
     });
-    print(tvTopRatedResults);
+   // print(tvTopRatedResults);
   }
 
   @override
@@ -77,13 +77,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   "assets/profile.png",
                   color: Colors.blue.shade600,
                   width: 30,
-                ))
+                )) 
           ],
         ),
         body: ListView(
           children: [
             SearchBarFunc(),
-            MovieCarousel(images: trendingmovies),
+            MovieCarousel(images: tvTopRated),
             TV(populartv: tvTopRated),
             TopRatedMovies(toprated: topRatedMovies),
             TrendingMovies(trending: trendingmovies),

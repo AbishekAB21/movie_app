@@ -47,9 +47,9 @@ class TrendingMovies extends StatelessWidget {
                               trending[index]['poster_path'],
                           vote: trending[index]['vote_average'].toString(),
                           ageRestricted: trending[index]['adult']
-                          ),
+                          ), 
                     ));
-                  },
+                  }, 
                   child: Container(
                     width: 140,
                     child: Column(

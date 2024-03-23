@@ -3,15 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:movie_app/utils/apptheme.dart';
 import 'package:movie_app/utils/text.dart';
 
-class MovieCarousel extends StatelessWidget {
-  final List images;
-  const MovieCarousel({super.key, required this.images});
+class RentMovies extends StatelessWidget {
+  final List rent;
+  const RentMovies({super.key, required this.rent});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return  Container(
       child: CarouselSlider(
-          items: images.map((e) {
+          items: rent.map((e) {
             return Builder(
               builder: (context) {
                 return InkWell(
@@ -25,23 +25,16 @@ class MovieCarousel extends StatelessWidget {
                             borderRadius: BorderRadius.circular(5),
                             image: DecorationImage(
                                 image: NetworkImage(
-                                    'https://image.tmdb.org/t/p/w500${e['backdrop_path']}'))),
+                                    'https://image.tmdb.org/t/p/w500${e['poster_path']}'),fit: BoxFit.fill)),
+                                    
                       )),
                       Positioned(
                           bottom: 10,
                           left: 10,
                           child: Row(
                             children: [
-                              Icon(
-                                Icons.verified,
-                                color: Colors.blue.shade600,
-                                size: 16,
-                              ),
-                              SizedBox(
-                                width: 10,
-                              ),
                               modifiedTexts(
-                                  text: "Included with Prime",
+                                  text: "Rent",
                                   color: apptheme.primaryColor,
                                   size: 16),
                             ],
@@ -52,7 +45,7 @@ class MovieCarousel extends StatelessWidget {
               },
             );
           }).toList(),
-          options: CarouselOptions(height: 200, autoPlay: true)),
-    );
+          options: CarouselOptions(height: 400, autoPlay: true)),
+    );;
   }
 }

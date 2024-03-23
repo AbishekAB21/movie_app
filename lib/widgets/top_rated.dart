@@ -7,7 +7,7 @@ import 'package:movie_app/utils/text.dart';
 class TopRatedMovies extends StatelessWidget {
   final List toprated;
   const TopRatedMovies({super.key, required this.toprated});
-
+ 
   @override
   Widget build(BuildContext context) {
     return Container(

@@ -9,6 +9,7 @@ abstract class AppTheme {
   final Color bottomNavBarIconsColor;
   final Color terinaryColor;
   final Color searchBarColor;
+  final Color StoreAppBarTitle;
   final TextStyle AppBarTitle;
   final TextStyle bottomNavBarLabel;
   final TextStyle hintTextStyle;
@@ -22,6 +23,7 @@ abstract class AppTheme {
     required this.bottomNavBarIconsColor,
     required this.terinaryColor,
     required this.searchBarColor,
+    required this.StoreAppBarTitle,
     required this.AppBarTitle,
     required this.bottomNavBarLabel,
     required this.hintTextStyle,
@@ -39,6 +41,7 @@ class AppDefaultTheme extends AppTheme {
         bottomNavBarIconsColor: Colors.white,
         terinaryColor: Colors.grey.shade800,
         searchBarColor: Colors.grey.shade900,
+        StoreAppBarTitle: Colors.yellow.shade600,
         AppBarTitle: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
         bottomNavBarLabel: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
         hintTextStyle: TextStyle(color: Colors.white.withOpacity(0.2)),
