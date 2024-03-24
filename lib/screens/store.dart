@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movie_app/functions/searchBar.dart';
 import 'package:movie_app/utils/apptheme.dart';
 import 'package:movie_app/utils/text.dart';
 import 'package:movie_app/widgets/rent_carousel.dart';
@@ -77,6 +78,7 @@ class _StoreScreenState extends State<StoreScreen> {
             ),
             body: ListView(
               children: [
+                SearchBarFunc(),
                 RentMovies(rent: trendingmovies),
                 SizedBox(
                   height: 10,
