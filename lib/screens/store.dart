@@ -34,7 +34,7 @@ class _StoreScreenState extends State<StoreScreen> {
       trendingmovies = trendingResult['results'];
       upcomingmovies = upcomingMoviesResult['results'];
     });
-    print("\n\nupcoming");
+    print("\n-----upcoming-----");
     print(upcomingmovies);
   }
 
