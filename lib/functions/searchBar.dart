@@ -50,7 +50,7 @@ class _SearchBarState extends State<SearchBarFunc> {
             searchresult.removeRange(20, searchresult.length);
           }
         } else {
-          print('null value found');
+          print('******');
         }
       }
     }

@@ -36,7 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
       topRatedMovies = topRatedMoviesResult['results'];
       tvTopRated = tvTopRatedResults['results']; 
     });
-   // print(tvTopRatedResults);
+    print(tvTopRatedResults);
   }
 
   @override

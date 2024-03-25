@@ -69,11 +69,13 @@ class _StoreScreenState extends State<StoreScreen> {
                       Icons.cast,
                       color: apptheme.iconColor1,
                     )),
+                    SizedBox(width: 6,),
                 Image.asset(
                   "assets/profile.png",
                   width: 30,
                   color: Colors.blue.shade600,
-                )
+                ),
+                SizedBox(width: 2,),
               ],
             ),
             body: ListView(
